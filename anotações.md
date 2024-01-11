@@ -12,10 +12,10 @@ resumindo as vantagens:
 
     
 ## instalação
-para instalar o docker basta ir na documentação oficial e utilizar os métodos lá apresentados, no arch Linux basta utilizar: 
+para instalar o docker basta ir na documentação oficial e utilizar os métodos lá apresentados, no arch Linux basta utilizar:
 
-yay -S docker
-sudo systemctl start docker
+* yay -S docker
+* sudo systemctl start docker
 
 após isso será possível utilizar docker normalmente, porém no Linux é necessário utilizar sudo antes de fazer certas operações com containers.
 
@@ -41,9 +41,13 @@ usar maquinas virtuais para rodar aplicações grandes sempre foram uma dor de c
 
 ## o que é uma imagem docker?
 
-uma imagem docker é um pacote ou ambiente que pode ser executado em um container
+uma imagem docker é um pacote ou ambiente que pode ser executado em um container, você pode criar a sua própria imagem se desejar, para isso basta criar na raiz do seu projeto um arquivo chamado Dockerfile.
 
-## comandos básicos
+## o que é o Dockerfile e como utilizar
+
+o Dockerfile é como se fosse um script de configuração de como deve ser construído o seu container, lá você vai definir coisas como diretório de trabalho e comandos para executar a aplicação, além da porta que vai ser exposta.
+
+## comandos básicos CLI
 
 * docker run <imagem>: 
     roda um container a partir de uma imagem 
@@ -73,4 +77,9 @@ uma imagem docker é um pacote ou ambiente que pode ser executado em um containe
 * docker rm <id_container:
     remove um container criado anteriormente e libera espaço.
 
+docker build <arquivo>:
+    constrói uma imagem a partir de um arquivo Dockerfile
 
+    .: constrói a imagem a partir de um arquivo Dockerfile na raiz do projeto
+    
+    -t nomeia uma tag pra imagem criada (facilita gerenciamento)
